@@ -27,15 +27,15 @@ char accept_char(char op)
 		return 0 ;
 	}
 }
-class vector{
+class cons_vector{
 	int x;  
 	int y;	
 	public:
-		vector()
+		cons_vector()
 		{
 			x=y=rand()%30;
 		}
-		vector(int x, int y)
+		cons_vector(int x, int y)
 		{
 			this->x=x;
 			this->y=y;
@@ -79,23 +79,23 @@ class vector{
 			set_vector(x,y);
 			cout<<"@";
 		}
-		void Copy_position(vector *p){
+		void Copy_position(cons_vector *p){
 			p->x = x;
 			p->y = y;
 		}
 };
 
 class Snake{
-	vector *cell[max_length];
+	cons_vector *cell[max_length];
 	int size;
-	vector fruit;
+	cons_vector fruit;
 	
 	public:
 	
 		Snake()
 		{	
 			size=1;
-			cell[0]= new vector(rand()%50,rand()%25);
+			cell[0]= new cons_vector(rand()%50,rand()%25);
 			for (int i=1;i<max_length;i++)
 			{
 				cell[i]=NULL; //Making cell of array null except cell 0.
@@ -106,7 +106,7 @@ class Snake{
 		{
 			if (size<max_length)
 			{
-				cell[size++]=new vector(0,0);
+				cell[size++]=new cons_vector(0,0);
 			}
 		}
 		void TurnUp()
@@ -172,7 +172,7 @@ int main()
 	cout<<"s -> Down"<<endl;
 	cout<<"a -> Left"<<endl;
 	cout<<"d -> Right"<<endl;
-	cout<<"Stay within the console"
+	cout<<"Stay within the console"<<endl;
 	cout<<"Press any key to continue";
 	getch();
 	do{
