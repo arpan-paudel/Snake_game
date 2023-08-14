@@ -6,6 +6,7 @@
 
 using namespace std;
 
+
 HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
 COORD CursorPosition;
 
